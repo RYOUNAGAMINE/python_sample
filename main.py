@@ -1,27 +1,13 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from PIL import Image
+import time
 
 st.title('Streamlit 超入門')
 
-st.write('DataFrame')
+st.write('Display Image')
 
-df = pd.DataFrame({
-  '1列目': [1,2,3,4],
-  '2列目': [10,20,30,40]
-})
-
-st.dataframe(df.style.highlight_max(axis=0))
-
-"""
-# 章
-## 節
-### 項
-
-```python
-import streamlit as st
-import numpy as np
-import pandas as pd
-
-```
-"""
+if st.checkbox('Show Image'):
+  image = Image.open("S__21364751.jpg")
+  st.image(image, caption='Mituba Mitu', use_column_width=True)
